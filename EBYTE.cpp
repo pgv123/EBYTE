@@ -37,14 +37,17 @@
   
 */
 
-#include <EBYTE.h>
-#include <Stream.h>
 
-#if ARDUINO >= 100
-#include "Arduino.h"
-#else
-#include "WProgram.h"
-#endif
+#include "pico/stdlib.h"
+
+#include <iostream>
+
+#include <string>
+#include <cstring>
+#include <vector>
+#include <cstdint>
+#include "EBYTE.h"
+
 
 /*
 create the transciever object
@@ -71,11 +74,19 @@ bool EBYTE::init(uint8_t _Attempts) {
 
 	bool ok = true;
 	
-	pinMode(_AUX, INPUT);
-	pinMode(_M0, OUTPUT);
-	pinMode(_M1, OUTPUT);
+    if(_AUX != -1) {
+		gpio_init(_AUX);
+    	gpio_set_dir(_AUX, GPIO_IN);
+		}
+//	pinMode(_AUX, INPUT);
+    gpio_init(_M0);
+    gpio_set_dir(_M0, GPIO_OUT);
+//	pinMode(_M0, OUTPUT);
+    gpio_init(_M1);
+    gpio_set_dir(_M1, GPIO_OUT);
+//	pinMode(_M1, OUTPUT);
 
-	delay(10);
+	sleep_ms(10);
 	
 	if (_Attempts < 1){
 		_Attempts = 1;

@@ -64,11 +64,6 @@
 */
 
 
-#if ARDUINO >= 100
-#include "Arduino.h"
-#else
-#include "WProgram.h"
-#endif
 
 
 // if you seem to get "corrupt settings add this line to your .ino
