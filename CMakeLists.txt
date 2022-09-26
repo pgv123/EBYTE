@@ -12,7 +12,7 @@ set(PICO_SDK_PATH "C:/Pico/pico-sdk")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(EBYTE C CXX ASM)
+project(Testing C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()

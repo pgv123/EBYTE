@@ -611,13 +611,13 @@ bool EBYTE::ReadParameters() {
 
 	SetMode(MODE_PROGRAM);
 
-	_s->write(0xC1);
+	cout << (0xC1);
 
-	_s->write(0xC1);
+	cout << (0xC1);
 
-	_s->write(0xC1);
+	cout << (0xC1);
 
-	_s->readBytes((uint8_t*)&_Params, (uint8_t) sizeof(_Params));
+	->readBytes((uint8_t*)&_Params, (uint8_t) sizeof(_Params));
 
 	_Save = _Params[0];
 	_AddressHigh = _Params[1];

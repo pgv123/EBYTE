@@ -177,7 +177,7 @@ class EBYTE {
 
 public:
 
-	EBYTE(Stream *s, uint8_t PIN_M0 = 4, uint8_t PIN_M1 = 5, uint8_t PIN_AUX = 6);
+	EBYTE(iostream *s, uint8_t PIN_M0 = 4, uint8_t PIN_M1 = 5, uint8_t PIN_AUX = 6);
 
 	// code to initialize the library
 	// this method reads all parameters from the module and stores them in memory
@@ -278,8 +278,8 @@ private:
 	bool ReadModelData();
 	void ClearBuffer();
 	// variable for the serial stream
-	Stream*  _s;
-	Stream*  _TD;
+	iostream*  _s;
+	iostream*  _TD;
 
 	// pin variables
 	int8_t _M0;
